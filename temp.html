@@ -1,0 +1,156 @@
+$picpath="studentpic/";
+$docpath="studentdoc/";
+$proofpath="studentproof/";
+if (isset( $_POST['sno'])){
+
+  $picpath=$picpath.$_FILES['cbc']['name'];
+  $docpath1=$docpath.$_FILES['urin']['name'];     
+  $docpath2=$docpath.$_FILES['ray']['name']; 
+  $docpath3=$docpath.$_FILES['ecg']['name']; 
+  $docpath4=$docpath.$_FILES['ct']['name'];     
+  $docpath5=$docpath.$_FILES['mri']['name'];     
+  $proofpath1=$proofpath.$_FILES['ultra']['name']; 
+  $proofpath2=$proofpath.$_FILES['other']['name']; 
+
+   
+    if(move_uploaded_file($_FILES['cbc']['tmp_name'],$picpath)
+    || move_uploaded_file($_FILES['urin']['tmp_name'],$docpath1)
+    || move_uploaded_file($_FILES['ray']['tmp_name'],$docpath2)
+    || move_uploaded_file($_FILES['ecg']['tmp_name'],$docpath3)
+    || move_uploaded_file($_FILES['ct']['tmp_name'],$docpath4)
+    || move_uploaded_file($_FILES['mri']['tmp_name'],$docpath5)
+    || move_uploaded_file($_FILES['ultra']['tmp_name'],$proofpath1)
+    || move_uploaded_file($_FILES['other']['tmp_name'],$proofpath2))
+    {
+     // $id=$_POST['sno'];
+     //$sno=$_POST['sno'];
+     $img=$_FILES['cbc']['name'];
+     $img1=$_FILES['urin']['name'];
+     $img2=$_FILES['ray']['name'];
+     $img3=$_FILES['ecg']['name'];
+     $img4=$_FILES['ct']['name'];
+     $img5=$_FILES['mri']['name'];
+     $img6=$_FILES['ultra']['name'];
+     $img7=$_FILES['other']['name'];
+        //  $set=0;
+        //  $_SESSION['suhel1']=$suhel;
+        //  $sql="select * from `maktum`";
+        //  $result = mysqli_query($conn, $sql);
+        //  while($row = mysqli_fetch_assoc($result)){
+           
+        //   if($row['sno']==$_SESSION['suhel1'])
+        //   {
+
+//   $result = mysqli_query($conn, $sql);
+//   if($result)
+//   {
+//     $update = true;
+//   }
+// else
+//   {
+//     echo "We could not update the record successfully";
+//   }
+          
+          //   $query="UPDATE `t_reports` SET (p_cbc,p_urin,p_xray,
+          // p_ecg,p_ct, p_mri, p_ultra,p_other) values 
+          // ('$img','$img1','$img2','$img3','$img4','$img5','$img6','$img7')";
+          $query = "UPDATE `t_reports` SET   `p_cbc` = '$img' , `p_urin` = '$img1' , `p_ray` = '$img2' , `p_ecg` = '$img3', `p_ct` = '$img4', `p_mri` = '$img5', `p_ultra` = '$img6', `p_other` = '$img7' WHERE `t_reports`.`sno` = $sno";
+
+              if($conn->query($query))
+                 {
+                  
+                  
+                      //   echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+                      //   <strong>Success!</strong> Reports has been uploaded successfully
+                      //   <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                      //     <span aria-hidden='true'>×</span>
+                      //   </button>
+                      // </div>";
+                      // echo"<div class='alert alert-success alert-dismissible fade show' role='alert'>
+                      // <strong>Success!</strong> Reports has been uploaded successfully
+                      // <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                      // <span aria-hidden='true'>&times;</span>
+                      //  </button>
+                      //  </div>";
+                      echo"Reports are inserted ";
+                   
+                 }
+         }
+        //  else {
+        //   echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+        //   <strong></strong> Invalid ID
+        //   <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        //     <span aria-hidden='true'>×</span>
+        //   </button>
+        //   </div>";
+        //  }
+            //  $set=1;
+                  
+              // break;
+          // }
+          
+          
+         
+      //    if($set==1)
+      //    {
+          
+  
+  
+  
+         
+     
+     
+    
+      // }
+  
+  else
+  {
+  echo "There is an error,please retry or check path";
+  }
+  }
+}
+    // $sno = $_POST["sno"];
+    // $cbc = $_POST["cbc"];
+    // $urin = $_POST["urin"];
+    // $ray=$_POST["ray"];
+    // $ecg = $_POST["ecg"];
+    // $ct = $_POST["ct"];
+    // $mri = $_POST["mri"];
+    // $ultra = $_POST["ultra"];
+    // $other = $_POST["other"];
+
+
+//   $sql = "UPDATE `t_reports` SET   `cbc` = '$cbc' , `urin` = '$urin' , `ray` = '$ray' , `ecg` = '$ecg', `ct` = '$ct', `mri` = '$mri', `ultra` = '$ultra', `other` = '$other' WHERE `t_reports`.`sno` = $sno";
+//   $result = mysqli_query($conn, $sql);
+//   if($result)
+//   {
+//     $update = true;
+//   }
+// else
+//   {
+//     echo "We could not update the record successfully";
+//   }
+
+// else{
+//   $sno = $_POST["sno"];
+//   $cbc = $_POST["cbc"];
+//   $urin = $_POST["urin"];
+//   $ray = $_POST["xray"];
+//   $ecg = $_POST["ecg"];
+//   $ct = $_POST["ct"];
+//   $mri = $_POST["mri"];
+//   $ultra = $_POST["ultra"];
+//   $other = $_POST["other"];
+
+
+//   $sql = "INSERT INTO `t_reports` (`p_cbc`,`p_urin` ,`p_xray`,`p_ecg`,`p_ct`,`p_mri`,`p_ultra`,`p_other`) VALUES ('$cbc', '$urin', '$ray', '$ecg', '$ct', '$mri', '$ultra','$other')";
+//   $result = mysqli_query($conn, $sql);
+
+   
+//   if($result){ 
+//       $insert = true;
+//   }
+//   else{
+//       echo "The record was not inserted successfully because of this error ---> ". mysqli_error($conn);
+//   } 
+// }

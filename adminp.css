@@ -1,0 +1,52 @@
+
+        .welcome
+        {
+            font-size:20px;
+            border: 2px  solid black;
+            width: 150px;
+        }
+        .info
+        {   
+            height:400px;
+            width:80%;
+            margin-left:150px;
+            margin-right:50px;
+            margin-top:50px;
+            margin-bottom:50px;
+            border: 2px solid black
+        }
+        .footera
+        {
+            background-color: blanchedalmond;
+        }
+        .caseno
+        {
+            font-size:22px;
+            margin-top:20px;
+            margin-left:25px;
+        }
+        .pname
+        {
+            font-size:22px;
+            margin-top:20px;
+            margin-left:20px;
+        }
+        .page
+        {
+            font-size:22px;
+            margin-top:20px;
+            margin-left:70px; 
+        }
+        .photo
+        {   margin-left:5px;
+            height:80px;
+            width:100px;
+        }
+        .reports
+        {  
+            margin-top:40px;
+            margin-left:350px;
+            font-size:50px;
+        }
+
+   
